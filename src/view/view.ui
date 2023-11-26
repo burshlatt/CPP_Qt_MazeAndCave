@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MazeView</string>
+   <string>Maze</string>
   </property>
   <property name="styleSheet">
    <string notr="true">QMainWindow {
@@ -182,7 +182,7 @@ QPushButton:pressed {
   border: 2px solid rgb(76,76,76);
   border-radius: 5px;
   background-color: #8F8F8F;
-  color: rgb(255,255,255);
+  color: #82D625;
 }
 
 QSpinBox::down-button  {
@@ -243,7 +243,7 @@ QSpinBox::up-button  {
   border: 2px solid rgb(76,76,76);
   border-radius: 5px;
   background-color: #8F8F8F;
-  color: rgb(255,255,255);
+  color: #82D625;
 }
 
 QSpinBox::down-button  {
@@ -382,6 +382,37 @@ QPushButton:pressed {
        <property name="frameShadow">
         <enum>QFrame::Raised</enum>
        </property>
+       <widget class="QLabel" name="label_3">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>230</width>
+          <height>280</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+	border: 1px solid #82D625;
+	color: #82D625;
+}</string>
+        </property>
+        <property name="lineWidth">
+         <number>1</number>
+        </property>
+        <property name="text">
+         <string>Eller's algorithm is a mathematical generator of mazes in which there is a single path between every two points, that is, mazes without loops.</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
       </widget>
      </widget>
     </widget>

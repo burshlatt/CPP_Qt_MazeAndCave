@@ -1,7 +1,7 @@
 #include <QApplication>
 #include <QIcon>
 
-#include "view/mazeview.h"
+#include "view/view.h"
 
 int main(int argc, char *argv[]) {
   QApplication app(argc, argv);

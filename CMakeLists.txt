@@ -13,12 +13,14 @@ find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
 set(PROJECT_SOURCES
-    main.cc
-    view/mazeview.cc
-    view/mazeview.h
-    view/mazeview.ui
-    view/mazewidget.h
-    view/mazewidget.cc
+    src/main.cc
+
+    src/view/view.h
+    src/view/view.cc
+    src/view/view.ui
+
+    src/view/maze.h
+    src/view/maze.cc
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -28,8 +30,9 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
 
 
         resources/resources.qrc
-        model/maze_builder.h
-        model/lee_algorithm.h model/maze_container.h
+        src/lib/seeker.h
+        src/lib/builder.h
+        src/lib/container.h
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET Maze APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
@@ -50,6 +53,8 @@ else()
 endif()
 
 target_link_libraries(Maze PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+
+include_directories(src/lib)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an

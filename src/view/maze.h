@@ -1,12 +1,15 @@
 #ifndef A1_MAZE_1_VIEW_MAZEWIDGET_H
 #define A1_MAZE_1_VIEW_MAZEWIDGET_H
 
-#include <QFile>
 #include <QGraphicsEllipseItem>
 #include <QGraphicsScene>
 #include <QGraphicsView>
 #include <QMouseEvent>
 #include <QTextStream>
+#include <QFile>
+
+#include "seeker.h"
+#include "builder.h"
 
 namespace s21 {
 class MazeWidget : public QGraphicsView {
@@ -16,22 +19,26 @@ class MazeWidget : public QGraphicsView {
         using Coords = std::vector<std::pair<int, int>>;
 
         MazeWidget(QGraphicsView *wdg = nullptr);
-        MazeWidget(MazeWidget&& wdg) = delete;
-        MazeWidget(const MazeWidget& wdg) = delete;
+        MazeWidget(MazeWidget &&wdg) = delete;
+        MazeWidget(const MazeWidget &wdg) = delete;
         ~MazeWidget();
 
-        void DrawWay();
         void DrawMaze();
-        void ClearScene();
-        void SetWalls(int rows, int cols);
+        void CreateMaze(int rows, int cols);
         void OpenFile(const QString &path);
-        void SaveFile(const QString &path);
-        void ClearVec(QVector<QGraphicsEllipseItem *> &vec);
+        void SaveFile(const QString &path) const;
 
+    protected:
+        void DrawWay();
+        void ClearScene();
+        void ClearVec(QVector<QGraphicsEllipseItem *> &vec) const;
         void mousePressEvent(QMouseEvent *event) override;
 
     private:
         QGraphicsScene *scene_;
+
+        Builder builder_;
+        Seeker seeker_;
 
         int rows_{1};
         int cols_{1};
@@ -47,7 +54,6 @@ class MazeWidget : public QGraphicsView {
 
         QVector<QGraphicsEllipseItem *> dots_;
         QVector<QGraphicsEllipseItem *> way_dots_;
-        std::unique_ptr<MazeController> maze_controller_;
 };
 }  // namespace s21
 

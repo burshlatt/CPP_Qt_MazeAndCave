@@ -3,9 +3,10 @@
 
 #include <QFileDialog>
 #include <QMainWindow>
+
 #include <memory>
 
-#include "mazewidget.h"
+#include "maze.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {

@@ -1,13 +1,12 @@
-#include "mazeview.h"
-
-#include "ui_mazeview.h"
+#include "view.h"
+#include "ui_view.h"
 
 namespace s21 {
 MazeView::MazeView(QWidget *parent) : QMainWindow(parent), ui_(new Ui::MazeView) {
     ui_->setupUi(this);
-    maze_widget_ = std::make_unique<MazeWidget>(ui_->graphicsView);
-
     setFixedSize(910, 660);
+
+    maze_widget_ = std::make_unique<MazeWidget>(ui_->graphicsView);
 
     connect(ui_->btnOpenFile, &QPushButton::clicked, this, [this]() {
         QString path = QFileDialog::getOpenFileName(this, "Open maze", QString(), "Maze file (*.txt)");
@@ -22,7 +21,7 @@ MazeView::MazeView(QWidget *parent) : QMainWindow(parent), ui_(new Ui::MazeView)
     connect(ui_->btnGenerate, &QPushButton::clicked, this, [this]() {
         int rows = ui_->RowsValue->value();
         int cols = ui_->ColsValue->value();
-        maze_widget_->SetWalls(rows, cols);
+        maze_widget_->CreateMaze(rows, cols);
         maze_widget_->DrawMaze();
     });
 }
