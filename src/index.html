@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A1_Maze</title>
+    <style>
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        ul, p {
+            text-align: justify;
+            list-style: none;
+        }
+        h4 {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Maze</h1>
+        <figure>
+            <img src="images/maze.gif" alt="Интерфейс программы" width="600px">
+            <figcaption><i>Интерфейс программы Maze.app</i></figcaption>
+        </figure>
+        <ul>
+            <h4>Интерфейс:</h4>
+            <li><strong>Open File</strong> - открывает файл с координатами (пример представлен ниже)</li>
+            <li><strong>Save File</strong> - сохраняет файл с координатами</li>
+            <li><strong>Maze rows</strong> - изменить количество строк лабиринта</li>
+            <li><strong>Maze cols</strong> - изменить количество столбцов лабиринта</li>
+            <li><strong>Generate</strong> - генерирует заданный лабиринт</li>
+        </ul>
+        <div class="txt-file_example">
+            <h2>Пример файла для лабиринта:</h2>
+            <p>Лабиринт может храниться в файле в виде количества строк и столбцов, а также двух матриц, содержащих положение вертикальных и горизонтальных стен соответственно. 
+                В первой матрице отображается наличие стены справа от каждой ячейки, а во второй - снизу.</p>
+                <p>Пример подобного файла: </p>
+                <p>4 4 <br>
+                    0 0 0 1 <br>
+                    1 0 1 1 <br>
+                    0 1 0 1 <br>
+                    0 0 0 1 <br>
+                     <br>
+                    1 0 1 0 <br>
+                    0 0 1 0 <br>
+                    1 1 0 1 <br>
+                    1 1 1 1</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>../images/maze_icon.png</file>
+        <file>../images/left_arrow.png</file>
+        <file>../images/right_arrow.png</file>
+    </qresource>
+</RCC>
