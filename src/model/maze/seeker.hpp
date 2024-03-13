@@ -1,5 +1,5 @@
-#ifndef A1_MAZE_1_MODEL_LEE_ALGORITHM_H
-#define A1_MAZE_1_MODEL_LEE_ALGORITHM_H
+#ifndef MAZE_MODEL_MAZE_SEEKER_HPP
+#define MAZE_MODEL_MAZE_SEEKER_HPP
 
 #include <list>
 #include <vector>
@@ -7,7 +7,7 @@
 #include <sstream>
 #include <iostream>
 
-#include "container.h"
+#include "container.hpp"
 
 namespace s21 {
 class Seeker {
@@ -117,4 +117,4 @@ class Seeker {
 };
 }  // namespace s21
 
-#endif  // A1_MAZE_1_MODEL_LEE_ALGORITHM_H
+#endif  // MAZE_MODEL_MAZE_SEEKER_HPP

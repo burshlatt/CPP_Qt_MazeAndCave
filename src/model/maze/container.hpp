@@ -1,5 +1,5 @@
-#ifndef A1_MAZE_1_MODEL_MAZE_CONTAINER_H
-#define A1_MAZE_1_MODEL_MAZE_CONTAINER_H
+#ifndef MAZE_MODEL_MAZE_CONTAINER_HPP
+#define MAZE_MODEL_MAZE_CONTAINER_HPP
 
 #include <list>
 #include <vector>
@@ -79,6 +79,7 @@ class MazeContainer {
         std::list<Point> GetNeighbors(Point p) const {
             std::list<Point> neighbors{};
             District d(p);
+            
             if (IsInMaze(d.top) && !IsPointWithBottomWall(d.top))
                 neighbors.push_back(d.top);
             if (IsInMaze(d.bottom) && !IsPointWithBottomWall(p))
@@ -87,6 +88,7 @@ class MazeContainer {
                 neighbors.push_back(d.left);
             if (IsInMaze(d.right) && !IsPointWithRightWall(p))
                 neighbors.push_back(d.right);
+
             return neighbors;
         }
 
@@ -98,12 +100,14 @@ class MazeContainer {
 
         Matrix ParseMatrix(std::ifstream& input, int rows, int cols) const {
             Matrix matrix(rows, std::vector<int>(cols, 0));
+
             for (int i = 0; i < rows; ++i)
                 for (int j = 0; j < cols; ++j)
                     input >> matrix[i][j];
+
             return matrix;
         }
 };
 }  // namespace s21
 
-#endif  //  A1_MAZE_1_MODEL_MAZE_CONTAINER_H
+#endif  //  MAZE_MODEL_MAZE_CONTAINER_HPP

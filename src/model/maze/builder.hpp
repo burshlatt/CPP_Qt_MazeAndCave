@@ -1,5 +1,5 @@
-#ifndef A1_MAZE_1_MODEL_MAZE_BUILDER_H
-#define A1_MAZE_1_MODEL_MAZE_BUILDER_H
+#ifndef MAZE_MODEL_MAZE_BUILDER_HPP
+#define MAZE_MODEL_MAZE_BUILDER_HPP
 
 #include <time.h>
 
@@ -136,4 +136,4 @@ class Builder {
 };
 }  // namespace s21
 
-#endif  // A1_MAZE_1_MODEL_MAZE_BUILDER_H
+#endif  // MAZE_MODEL_MAZE_BUILDER_HPP

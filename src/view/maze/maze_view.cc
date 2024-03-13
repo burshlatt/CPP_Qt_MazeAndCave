@@ -1,4 +1,4 @@
-#include "maze.h"
+#include "maze_view.hpp"
 
 namespace s21 {
 MazeWidget::MazeWidget(QGraphicsView *wdg) : QGraphicsView(wdg) {

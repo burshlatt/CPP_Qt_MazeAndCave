@@ -15,46 +15,41 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 set(PROJECT_SOURCES
     src/main.cc
 
-    src/view/view.h
+    src/view/view.hpp
     src/view/view.cc
     src/view/view.ui
 
-    src/view/maze.h
-    src/view/maze.cc
+    src/view/maze/maze_view.hpp
+    src/view/maze/maze_view.cc
+    
+    src/view/cave/cave_view.hpp
+    src/view/cave/cave_view.cc
 )
 
-if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
-    qt_add_executable(Maze
-        MANUAL_FINALIZATION
-        ${PROJECT_SOURCES}
+qt_add_executable(Maze
+    MANUAL_FINALIZATION
+    ${PROJECT_SOURCES}
 
+    resources/resources.qrc
+    
+    src/model/maze/seeker.hpp
+    src/model/maze/builder.hpp
+    src/model/maze/container.hpp
 
-        resources/resources.qrc
-        src/lib/seeker.h
-        src/lib/builder.h
-        src/lib/container.h
-    )
-# Define target properties for Android with Qt 6 as:
-#    set_property(TARGET Maze APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
-#                 ${CMAKE_CURRENT_SOURCE_DIR}/android)
-# For more information, see https://doc.qt.io/qt-6/qt-add-executable.html#target-creation
-else()
-    if(ANDROID)
-        add_library(Maze SHARED
-            ${PROJECT_SOURCES}
-        )
-# Define properties for Android with Qt 5 after find_package() calls as:
-#    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
-    else()
-        add_executable(Maze
-            ${PROJECT_SOURCES}
-        )
-    endif()
-endif()
+    src/model/cave/cave.hpp
+    src/model/cave/generator.hpp
+)
 
 target_link_libraries(Maze PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 
-include_directories(src/lib)
+include_directories(
+    src/view
+    src/view/maze
+    src/view/cave
+    src/model/maze
+    src/model/cave
+    src/controller
+)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
