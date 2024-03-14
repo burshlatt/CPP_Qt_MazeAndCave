@@ -8,7 +8,7 @@ int main(int argc, char *argv[]) {
 
   app.setWindowIcon(QIcon(":/images/maze_icon.png"));
 
-  s21::MazeView window;
+  s21::View window;
   window.show();
 
   return app.exec();

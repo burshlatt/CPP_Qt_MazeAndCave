@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(Maze VERSION 0.1 LANGUAGES CXX)
+project(MazeAndCave VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
@@ -31,13 +31,15 @@ qt_add_executable(Maze
     ${PROJECT_SOURCES}
 
     resources/resources.qrc
+
+    src/model/cave/cave.hpp
     
     src/model/maze/seeker.hpp
     src/model/maze/builder.hpp
     src/model/maze/container.hpp
 
-    src/model/cave/cave.hpp
-    src/model/cave/generator.hpp
+    src/controller/maze_controller.hpp
+    src/controller/cave_controller.hpp
 )
 
 target_link_libraries(Maze PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)

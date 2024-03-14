@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MazeView</class>
- <widget class="QMainWindow" name="MazeView">
+ <class>View</class>
+ <widget class="QMainWindow" name="View">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -31,6 +31,12 @@
       <height>660</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
     <property name="styleSheet">
      <string notr="true">QTabWidget {
 	color: white;
@@ -38,15 +44,26 @@
 	border: 0px;
 }
 
-QTabBar::tab {
-	color: white;
-	background-color: #363636;
+QTabWidget::tab-bar {
+	alignment: center;
 }
 
-QTabWidget::pane { border: 0; }</string>
+QTabBar::tab {
+	color: #82D625;
+	background-color: #8F8F8F;
+	border-radius: 5px;
+	border: 2px solid gray;
+	height: 20px;
+	width: 70px;
+}
+
+QTabWidget::pane {
+	border: 0;
+}
+</string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tabMaze">
      <property name="styleSheet">
@@ -93,7 +110,7 @@ QTabWidget::pane { border: 0; }</string>
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QPushButton" name="btnOpenFile">
+      <widget class="QPushButton" name="btnOpenFileMaze">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -128,7 +145,7 @@ QPushButton:pressed {
         <string>Open File</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="btnSaveFile">
+      <widget class="QPushButton" name="btnSaveFileMaze">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -163,7 +180,7 @@ QPushButton:pressed {
         <string>Save File</string>
        </property>
       </widget>
-      <widget class="QSpinBox" name="RowsValue">
+      <widget class="QSpinBox" name="sbMazeRows">
        <property name="enabled">
         <bool>true</bool>
        </property>
@@ -223,8 +240,11 @@ QSpinBox::up-button  {
        <property name="maximum">
         <number>50</number>
        </property>
+       <property name="value">
+        <number>25</number>
+       </property>
       </widget>
-      <widget class="QSpinBox" name="ColsValue">
+      <widget class="QSpinBox" name="sbMazeCols">
        <property name="enabled">
         <bool>true</bool>
        </property>
@@ -285,10 +305,10 @@ QSpinBox::up-button  {
         <number>50</number>
        </property>
        <property name="value">
-        <number>1</number>
+        <number>25</number>
        </property>
       </widget>
-      <widget class="QPushButton" name="btnGenerate">
+      <widget class="QPushButton" name="btnGenerateMaze">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -334,7 +354,7 @@ QPushButton:pressed {
        </property>
        <property name="font">
         <font>
-         <pointsize>10</pointsize>
+         <pointsize>9</pointsize>
          <bold>true</bold>
         </font>
        </property>
@@ -358,7 +378,7 @@ QPushButton:pressed {
        </property>
        <property name="font">
         <font>
-         <pointsize>10</pointsize>
+         <pointsize>9</pointsize>
          <bold>true</bold>
         </font>
        </property>
@@ -586,7 +606,7 @@ QSpinBox::up-button  {
         <number>150</number>
        </property>
        <property name="value">
-        <number>75</number>
+        <number>100</number>
        </property>
       </widget>
       <widget class="QSpinBox" name="sbCaveCols">
@@ -650,7 +670,7 @@ QSpinBox::up-button  {
         <number>150</number>
        </property>
        <property name="value">
-        <number>75</number>
+        <number>100</number>
        </property>
       </widget>
       <widget class="QPushButton" name="btnGenerateCave">
@@ -1392,10 +1412,10 @@ QSpinBox::up-button  {
         <number>1</number>
        </property>
        <property name="maximum">
-        <number>100</number>
+        <number>1000</number>
        </property>
        <property name="value">
-        <number>30</number>
+        <number>100</number>
        </property>
       </widget>
       <widget class="QLabel" name="label_20">

@@ -1,6 +1,8 @@
-#ifndef MAZE_VIEW_VIEW_HPP
-#define MAZE_VIEW_VIEW_HPP
+#ifndef MAZE_AND_CAVE_VIEW_VIEW_HPP
+#define MAZE_AND_CAVE_VIEW_VIEW_HPP
 
+#include <QTimer>
+#include <QTabBar>
 #include <QFileDialog>
 #include <QMainWindow>
 
@@ -11,23 +13,40 @@
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
-class MazeView;
+class View;
 }
 QT_END_NAMESPACE
 
 namespace s21 {
-class MazeView : public QMainWindow {
+class View : public QMainWindow {
     Q_OBJECT
 
 public:
-    MazeView(QWidget *parent = nullptr);
-    ~MazeView();
+    View(QWidget *parent = nullptr);
+    ~View();
 
 private:
-    Ui::MazeView *ui_;
+    void MazeSaveConfig();
+    void MazeLoadConfig();
+    void GenerateMaze();
+
+    Settings GetSettings();
+
+    void CaveSaveConfig();
+    void CaveLoadConfig();
+    void GenerateCave();
+    void GenerateStep();
+    void GenerateStepTimer();
+
+    void WindowChange();
+
+private:
+    Ui::View* ui_;
+    QTimer* timer_;
+
     std::unique_ptr<MazeWidget> maze_widget_;
     std::unique_ptr<CaveWidget> cave_widget_;
 };
 }  // namespace s21
 
-#endif  // MAZE_VIEW_VIEW_HPP
+#endif  // MAZE_AND_CAVE_VIEW_VIEW_HPP
