@@ -354,7 +354,7 @@ QPushButton:pressed {
        </property>
        <property name="font">
         <font>
-         <pointsize>9</pointsize>
+         <pointsize>8</pointsize>
          <bold>true</bold>
         </font>
        </property>
@@ -378,7 +378,7 @@ QPushButton:pressed {
        </property>
        <property name="font">
         <font>
-         <pointsize>9</pointsize>
+         <pointsize>8</pointsize>
          <bold>true</bold>
         </font>
        </property>
@@ -719,7 +719,7 @@ QPushButton:pressed {
        </property>
        <property name="font">
         <font>
-         <pointsize>9</pointsize>
+         <pointsize>8</pointsize>
          <bold>true</bold>
         </font>
        </property>
@@ -743,7 +743,7 @@ QPushButton:pressed {
        </property>
        <property name="font">
         <font>
-         <pointsize>9</pointsize>
+         <pointsize>8</pointsize>
          <bold>true</bold>
         </font>
        </property>
@@ -767,7 +767,7 @@ QPushButton:pressed {
        </property>
        <property name="font">
         <font>
-         <pointsize>9</pointsize>
+         <pointsize>8</pointsize>
          <bold>true</bold>
         </font>
        </property>
@@ -919,7 +919,7 @@ QSpinBox::up-button  {
        </property>
        <property name="font">
         <font>
-         <pointsize>9</pointsize>
+         <pointsize>8</pointsize>
          <bold>true</bold>
         </font>
        </property>
@@ -1007,7 +1007,7 @@ QSpinBox::up-button  {
        </property>
        <property name="font">
         <font>
-         <pointsize>9</pointsize>
+         <pointsize>8</pointsize>
          <bold>true</bold>
         </font>
        </property>
@@ -1031,7 +1031,7 @@ QSpinBox::up-button  {
        </property>
        <property name="font">
         <font>
-         <pointsize>9</pointsize>
+         <pointsize>8</pointsize>
          <bold>true</bold>
         </font>
        </property>
@@ -1183,7 +1183,7 @@ QSpinBox::up-button  {
        </property>
        <property name="font">
         <font>
-         <pointsize>9</pointsize>
+         <pointsize>8</pointsize>
          <bold>true</bold>
         </font>
        </property>
@@ -1207,7 +1207,7 @@ QSpinBox::up-button  {
        </property>
        <property name="font">
         <font>
-         <pointsize>9</pointsize>
+         <pointsize>8</pointsize>
          <bold>true</bold>
         </font>
        </property>
@@ -1429,7 +1429,7 @@ QSpinBox::up-button  {
        </property>
        <property name="font">
         <font>
-         <pointsize>9</pointsize>
+         <pointsize>7</pointsize>
          <bold>true</bold>
         </font>
        </property>

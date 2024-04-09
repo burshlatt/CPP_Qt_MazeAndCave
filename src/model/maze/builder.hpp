@@ -105,7 +105,7 @@ private:
     }
 
     void SetRightWallsForLine(int row) {
-        std::vector<int> random_line{GetRandomBinLine()};
+        std::vector<int> random_line(std::move(GetRandomBinLine()));
         for (int i = 0; i < cols_; i++) {
             if (random_line[i] == 1) {
                 vertical_walls_[row][i] = 1;
@@ -130,7 +130,7 @@ private:
     }
 
     void SetBottomWallsForLine(int row) {
-        std::vector<int> random_line{GetRandomBinLine()};
+        std::vector<int> random_line(std::move(GetRandomBinLine()));
         for (int i = 0; i < cols_; i++) {
             if (random_line[i] == 0) {
                 horizontal_walls_[row][i] = 0;
@@ -189,8 +189,8 @@ private:
     }
 
 private:
-    int rows_ = 5;
-    int cols_ = 5;
+    int rows_{5};
+    int cols_{5};
 
     Matrix maze_matrix_{};
     Matrix vertical_walls_{};

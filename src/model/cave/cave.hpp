@@ -12,10 +12,6 @@ namespace fs = std::filesystem;
 
 namespace s21 {
 struct Settings {
-    Settings() = default;
-    Settings(const Settings&) = default;
-    ~Settings() = default;
-
     std::size_t rows{};
     std::size_t cols{};
     std::size_t live_chance{};
@@ -55,10 +51,11 @@ public:
             for (size_type col = 0; col != settings_.cols; ++col) {
                 size_type count = CountLiveNeighbours(row, col, cave);
 
-                if (cave(row, col) == 1 && (count < settings_.live_limit.first || count > settings_.live_limit.second))
+                if (cave(row, col) == 1 && (count < settings_.live_limit.first || count > settings_.live_limit.second)) {
                     tmp(row, col) = 0;
-                else if (cave(row, col) == 0 && (count >= settings_.born_limit.first && count <= settings_.born_limit.second))
+                } else if (cave(row, col) == 0 && (count >= settings_.born_limit.first && count <= settings_.born_limit.second)) {
                     tmp(row, col) = 1;
+                }
             }
         }
 
